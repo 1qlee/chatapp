@@ -14,8 +14,8 @@ $(document).ready(function() {
   });
 
   // broadcast that a user has connected to everyone else
-  socket.on('connect message', function(msg){
-    $('#broadcast').append($('<h2>').text(msg));
+  socket.on('connect message', function(){
+    $('#broadcast').append($('<h2>').text('A user has connected.'));
   });
 
 })

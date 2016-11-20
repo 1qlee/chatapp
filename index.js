@@ -18,11 +18,7 @@ app.set('views', __dirname + '/views');
 
 io.on('connection', function(socket){
   console.log('A user connected.');
-
-  socket.on('connection', function(msg) {
-    io.emit('connect message', msg);
-    console.log(msg);
-  });
+  io.emit('connect message');
 
   socket.on('disconnect', function() {
     console.log('User disconnected.');
