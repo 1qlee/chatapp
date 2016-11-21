@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
 
   socket.on('connected message', function(newUser) {
-    $('#welcome').append($('<h3>').text(newUser)).delay(1500).fadeOut(300);
+    $('#welcome').append($('<h3>').text(newUser)).delay(1000).fadeOut(500);
   });
 
   socket.on('connect', function() {
@@ -22,7 +22,11 @@ $(document).ready(function() {
   });
 
   socket.on('new user message', function(msg) {
-    $('#broadcast').append($('<h3>').text(msg));
+    $('#broadcast').append($('<p class="broadcast-msg">').text(msg));
+    setTimeout(function() {
+      $('.broadcast-msg').fadeOut(500);
+    }, 1000);
   });
+
 
 })
