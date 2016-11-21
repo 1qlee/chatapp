@@ -13,9 +13,16 @@ $(document).ready(function() {
     $('#messages').append($('<li>').text(msg));
   });
 
-  // broadcast that a user has connected to everyone else
-  socket.on('connect message', function(){
-    $('#broadcast').append($('<h2>').text('A user has connected.'));
+  socket.on('connected message', function(newUser) {
+    $('#welcome').append($('<h3>').text(newUser)).delay(1500).fadeOut(300);
+  });
+
+  socket.on('connect', function() {
+    socket.emit('new user joined');
+  });
+
+  socket.on('new user message', function(msg) {
+    $('#broadcast').append($('<h3>').text(msg));
   });
 
 })

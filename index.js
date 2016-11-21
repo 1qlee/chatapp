@@ -17,11 +17,15 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 io.on('connection', function(socket){
-  console.log('A user connected.');
-  io.emit('connect message');
+  socket.emit('connected message', 'You are now connected');
 
   socket.on('disconnect', function() {
-    console.log('User disconnected.');
+    console.log('A user has disconnected.');
+  });
+
+  socket.on('new user joined', function() {
+    console.log('A new user has joined.');
+    socket.broadcast.emit('new user message', "A new user has joined.")
   });
 
   socket.on('chat message', function(msg){
