@@ -1,8 +1,56 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font: 13px Helvetica, Arial; }
-form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-form button { width: 9%; background: #3cbc8d; border: none; padding: 10px; }
-#messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li { padding: 5px 10px; }
-#messages li:nth-child(odd) { background: #eee; }
+#chat-screen {
+
+}
+
+#log {
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.welcome-msg {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.broadcast-msg {
+  margin: 0;
+}
+
+.numUsers-msg {
+  
+}
+
+#messages-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid grey;
+  border-radius: 3px;
+  max-height: 450px;
+  min-height: 450px;
+  overflow-y: scroll;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#messages li {
+  padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
+
+#chatbox {
+  padding-left: 15px;
+}

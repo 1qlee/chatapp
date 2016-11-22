@@ -33,12 +33,43 @@
       </div>
       <main class="mdl-layout__content">
         <!-- Chat form -->
-        <div id="welcome"></div>
-        <div id="broadcast"></div>
-        <ul id="messages"></ul>
-        <form action="">
-          <input id="m" autocomplete="off" /><button>Send</button>
-        </form>
+        <div class="container">
+          <div id="login-screen">
+            <div id="success">
+
+            </div>
+            <form id="login-box" action="">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input id="username-input" class="mdl-textfield__input" autocomplete="off" type="text">
+                <label class="mdl-textfield__label" for="username-input">Enter a username</label>
+              </div>
+            </form>
+          </div>
+          <div id="chat-screen" div class="mdl-grid">
+            <div id="log" class="mdl-cell mdl-cell--2-col">
+              <div id="welcome">
+                <p class="welcome-msg">
+                  
+                </p>
+                <p class="numUsers-msg">
+                </p>
+              </div>
+              <div id="broadcast"></div>
+            </div>
+            <div id="messages-wrapper" class="mdl-cell mdl-cell--8-col">
+              <ul id="messages" class="mdl-list"></ul>
+              <form id="chatbox" action="">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input id="m" class="mdl-textfield__input" autocomplete="off" type="text">
+                  <label class="mdl-textfield__label" for="m">Send a message</label>
+                </div>
+              </form>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+
+            </div>
+          </div>
+        </div>
       </main>
     </div>
 

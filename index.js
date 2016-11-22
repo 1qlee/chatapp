@@ -16,22 +16,53 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
+// Chatroom
+
+var numUsers = -1;
+
 io.on('connection', function(socket){
-  socket.emit('connected message', 'You are now connected');
+  // variable to track if the user is added or not
+  var userAdded = false;
 
-  socket.on('disconnect', function() {
-    console.log('A user has disconnected.');
+  // add a new user by username
+  socket.on('new user added', function(userName) {
+    // is the user added?
+    if (userAdded) {
+      return;
+    }
+    // store the username for this client
+    socket.username = userName;
+    ++numUsers;
+    userAdded = true;
+    socket.emit('loggedIn', {
+      message: 'Welcome to the chat!',
+      numUsers: numUsers
+    });
+    socket.broadcast.emit('new user joined', {
+      username: socket.username,
+      numUsers: numUsers
+    });
   });
 
-  socket.on('new user joined', function() {
-    console.log('A new user has joined.');
-    socket.broadcast.emit('new user message', "A new user has joined.")
-  });
-
+  // chat message event, send out the msg to client
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-    console.log(msg);
+    io.emit('chat message', {
+      username: socket.username,
+      message: msg
+    });
   });
 
+  // update numUsers and send msg to client when a user has disconnected
+  socket.on('disconnect', function() {
+    if (userAdded) {
+      --numUsers;
+
+      // let everyone else know who left and how many users there are now
+      socket.broadcast.emit('user disconnected', {
+        username: socket.username,
+        numUsers: numUsers
+      });
+    }
+  });
 
 });
