@@ -1,19 +1,55 @@
-#chat-screen {
-
-}
-
-#log {
-  border: 1px solid grey;
-  padding: 10px;
-}
-
+/**** GENERAL ****/
 .container {
   margin: 0 auto;
   padding: 0 20px;
 }
 
+.text-aligned-center {
+  text-align: center;
+}
+
+.is-fullwidth {
+  width: 100% !important;
+}
+
+.is-paddingless {
+  padding: 0 !important;
+}
+
+textarea {
+  resize: none !important;
+  max-height: 50px;
+  min-height: 50px;
+  border: 1px solid grey;
+}
+
+/**** MDL CHANGES ****/
+.mdl-card__title {
+  justify-content: center;
+}
+
+
+/**** LOGIN SCREEN ****/
+#login-card {
+  width: 100%;
+}
+
+/**** CHAT SCREEN ****/
+#chat-screen {
+  font-family: 'Roboto';
+}
+
+#log {
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 10px;
+  max-height: 450px;
+  min-height: 450px;
+  overflow-y: scroll;
+}
+
 .welcome-msg {
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -22,7 +58,7 @@
 }
 
 .numUsers-msg {
-  
+
 }
 
 #messages-wrapper {
@@ -33,7 +69,6 @@
   border-radius: 3px;
   max-height: 450px;
   min-height: 450px;
-  overflow-y: scroll;
 }
 
 #messages {
@@ -41,16 +76,16 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  max-height: 340px;
+  min-height: 340px;
+  overflow-y: scroll;
 }
 
 #messages li {
   padding: 5px 10px;
 }
 
-#messages li:nth-child(odd) {
-  background: #eee;
-}
-
 #chatbox {
-  padding-left: 15px;
+  border-top: 1px solid grey;
+  padding: 0 10px;
 }

@@ -26,6 +26,14 @@ $(document).ready(function() {
     return false;
   });
 
+  // use enter to send a chat message
+  $('#m').keypress(function(e) {
+    if (e.which == 13 && !event.shiftKey) {
+      e.preventDefault();
+      $('#chatbox').submit();
+    }
+  });
+
   // when the message is received by the server, append it to an li
   socket.on('chat message', function(msg){
     $('#messages').append($('<li class="mdl-list__item">').text(msg.username + ': ' + msg.message));
@@ -46,7 +54,12 @@ $(document).ready(function() {
 
   socket.on('new user joined', function(newUser) {
     $('#broadcast').append($('<p class="broadcast-msg">').text(newUser.username + ' has joined.'));
-    $('.numUsers-msg').text('There are ' + newUser.numUsers + ' other users here.');
+    if (newUser.numUsers == 1) {
+      $('.numUsers-msg').text('There is 1 other user here.');
+    }
+    else {
+      $('.numUsers-msg').text('There are ' + newUser.numUsers + ' other users here.');
+    }
   });
 
   socket.on('user disconnected', function(userDc) {

@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wonkyu Hangouts</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.green-pink.min.css" />
+    <title>Kappa Boys</title>
     <link rel="stylesheet" href="/css/master.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.green-deep_orange.min.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
 
   <body>
 
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <div class="mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title">Wonkyu Hangouts</span>
+          <span class="mdl-layout-title">Kappa Boys</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation -->
           <nav class="mdl-navigation">
+            <div class="mdl-layout-icon">
+
+            </div>
           </nav>
         </div>
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">Kappa Boys</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Contacts</a>
+          <a class="mdl-navigation__link" href="">Conversations</a>
+          <a class="mdl-navigation__link" href="">Settings</a>
+          <a class="mdl-navigation__link" href="">Help & Feedback</a>
         </nav>
       </div>
       <main class="mdl-layout__content">
         <!-- Chat form -->
         <div class="container">
-          <div id="login-screen">
-            <div id="success">
+          <div id="login-screen" div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">
 
             </div>
-            <form id="login-box" action="">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input id="username-input" class="mdl-textfield__input" autocomplete="off" type="text">
-                <label class="mdl-textfield__label" for="username-input">Enter a username</label>
+            <div class="mdl-cell mdl-cell--4-col">
+              <div id="login-card" class="mdl-card mdl-shadow--2dp text-aligned-center">
+                <div class="mdl-card__title mdl-card--border">
+                  You must enter a username to log in.
+                </div>
+                <div class="mdl-card__supporting-text">
+                  Do not use any special characters, asshole. And keep it short. Asshole.
+                </div>
+                <div class="mdl-card__actions">
+                  <form id="login-box" action="">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-fullwidth">
+                      <input id="username-input" class="mdl-textfield__input" autocomplete="off" type="text">
+                      <label class="mdl-textfield__label" for="username-input">Enter a username</label>
+                    </div>
+                  </form>
+                </div>
               </div>
-            </form>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+
+            </div>
           </div>
           <div id="chat-screen" div class="mdl-grid">
             <div id="log" class="mdl-cell mdl-cell--2-col">
               <div id="welcome">
                 <p class="welcome-msg">
-                  
+
                 </p>
                 <p class="numUsers-msg">
                 </p>
@@ -59,8 +78,8 @@
             <div id="messages-wrapper" class="mdl-cell mdl-cell--8-col">
               <ul id="messages" class="mdl-list"></ul>
               <form id="chatbox" action="">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input id="m" class="mdl-textfield__input" autocomplete="off" type="text">
+                <div class="mdl-textfield mdl-js-textfield is-fullwidth">
+                  <textarea id="m" class="mdl-textfield__input" autocomplete="off" type="text" autofocus></textarea>
                   <label class="mdl-textfield__label" for="m">Send a message</label>
                 </div>
               </form>
