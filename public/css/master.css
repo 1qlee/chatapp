@@ -28,6 +28,10 @@ textarea {
   justify-content: center;
 }
 
+.mdl-list__item {
+  min-height: 24px !important;
+}
+
 
 /**** LOGIN SCREEN ****/
 #login-card {
@@ -40,9 +44,8 @@ textarea {
 }
 
 #log {
-  border: 1px solid grey;
-  border-radius: 3px;
   padding: 10px;
+  box-sizing: border-box;
   max-height: 450px;
   min-height: 450px;
   overflow-y: scroll;
@@ -65,8 +68,6 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border: 1px solid grey;
-  border-radius: 3px;
   max-height: 450px;
   min-height: 450px;
 }
@@ -76,8 +77,8 @@ textarea {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-height: 340px;
-  min-height: 340px;
+  max-height: 330px;
+  min-height: 330px;
   overflow-y: scroll;
 }
 
@@ -86,6 +87,6 @@ textarea {
 }
 
 #chatbox {
-  border-top: 1px solid grey;
+  border-top: 1px solid rgba(0,0,0,.12);
   padding: 0 10px;
 }
