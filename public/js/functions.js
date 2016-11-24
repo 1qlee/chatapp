@@ -36,7 +36,7 @@ $(document).ready(function() {
 
   // when the message is received by the server, append it to an li
   socket.on('chat message', function(msg){
-    $('#messages').append($('<li class="mdl-list__item">').text(msg.username + ': ' + msg.message));
+    $('#messages').append($('<li>').text(msg.username + ': ' + msg.message));
   });
 
   socket.on('loggedIn', function(newUser) {

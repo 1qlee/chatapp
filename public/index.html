@@ -1,111 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kappa Boys</title>
-    <link rel="stylesheet" href="/css/master.css" type="text/css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.green-deep_orange.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  </head>
+<head>
+  <title>Kappa Boys</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/master.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+  <nav class="green lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><i class="material-icons">face</i>Yung Boys Chat</a>
+      <ul class="right hide-on-small-only">
+        <li><a href="https://github.com/1qlee/chatapp">Github</a></li>
+      </ul>
 
-  <body>
-
-    <div class="mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">Kappa Boys</span>
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation -->
-          <nav class="mdl-navigation">
-            <div class="mdl-layout-icon">
-
-            </div>
-          </nav>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Kappa Boys</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Contacts</a>
-          <a class="mdl-navigation__link" href="">Conversations</a>
-          <a class="mdl-navigation__link" href="">Settings</a>
-          <a class="mdl-navigation__link" href="">Help & Feedback</a>
-        </nav>
-      </div>
-      <main class="mdl-layout__content">
-        <!-- Chat form -->
-        <div class="container">
-          <div id="login-screen" div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col"></div>
-            <div class="mdl-cell mdl-cell--4-col">
-              <div id="login-card" class="mdl-card mdl-shadow--2dp text-aligned-center">
-                <div class="mdl-card__title mdl-card--border">
-                  You must enter a username to log in.
-                </div>
-                <div class="mdl-card__supporting-text">
-                  Do not use any special characters, asshole. And keep it short. Asshole.
-                </div>
-                <div class="mdl-card__actions">
-                  <form id="login-box" action="">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-fullwidth">
-                      <input id="username-input" class="mdl-textfield__input" autocomplete="off" type="text">
-                      <label class="mdl-textfield__label" for="username-input">Enter a username</label>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--4-col"></div>
-          </div>
-          <div id="chat-screen" div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col">
-              <div id="log" class="mdl-shadow--2dp">
-                <div id="welcome">
-                  <p class="welcome-msg"></p>
-                  <p class="numUsers-msg"></p>
-                </div>
-                <div id="broadcast"></div>
-              </div>
-            </div>
-            <div id="messages-wrapper" class="mdl-cell mdl-cell--8-col">
-              <div id="messages-wrapper" class="mdl-shadow--2dp">
-                <ul id="messages" class="mdl-list"></ul>
-                <form id="chatbox" action="">
-                  <div class="mdl-textfield mdl-js-textfield is-fullwidth">
-                    <textarea id="m" class="mdl-textfield__input" autocomplete="off" type="text" autofocus></textarea>
-                    <label class="mdl-textfield__label" for="m">Send a message</label>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--2-col"></div>
-          </div>
-        </div>
-      </main>
-
-      <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-          <div class="mdl-logo">Powered by:</div>
-          <ul class="mdl-mini-footer__link-list">
-            <li><a href="https://nodejs.org/en/">nodeJS</a></li>
-            <li><a href="http://socket.io/">socket.io</a></li>
-          </ul>
-        </div>
-        <div class="mdl-mini-footer__right-section">
-          <ul class="mdl-mini-footer__link-list">
-            <li><a href="https://github.com/1qlee/chatapp">Github</a></li>
-          </ul>
-        </div>
-      </footer>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Derp</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
+  </nav>
 
+  <div id="login-screen" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div id="login-card" class="card z-depth-3">
+            <div class="card-content">
+              <span class="card-title">You must enter a username to log in.</span>
+              <p>Do not use any special characters, asshole. And keep it short. Asshole.</p>
+            </div>
+            <div class="card-action">
+              <form id="login-box" action="">
+                <div class="input-field inline">
+                  <input id="username-input" autocomplete="off" type="text">
+                  <label for="username-input">Enter a username</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="chat-screen" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m4">
+          <div id="log" class="card z-depth-3">
+            <div class="card-content">
+              <div id="welcome">
+                <p class="welcome-msg"></p>
+                <p class="numUsers-msg"></p>
+              </div>
+              <div id="broadcast"></div>
+            </div>
+          </div>
+        </div>
+        <div id="messages-wrapper" class="col s12 m8">
+          <div id="messages-wrapper" class="card z-depth-3 medium">
+            <ul id="messages" class="mdl-list"></ul>
+            <form id="chatbox" action="">
+              <div class="input-field">
+                <textarea id="m" class="materialize" autocomplete="off" type="text" autofocus></textarea>
+                <label for="m">Send a message</label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="/js/functions.js"></script>
-    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-  </body>
+  <footer class="page-footer">
+     <div class="container">
+       <div class="row">
+         <div class="col l6 s12">
+           <h5 class="white-text"></h5>
+           <p class="grey-text text-lighten-4"></p>
+         </div>
+         <div class="col l4 offset-l2 s12">
+           <h5 class="white-text">Powered by:</h5>
+           <ul>
+             <li><a class="grey-text text-lighten-3" href="https://nodejs.org/en/">nodeJS</a></li>
+             <li><a class="grey-text text-lighten-3" href="http://socket.io/">socket.io</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="footer-copyright">
+       <div class="container">
+       © 2016 wonkyu-chatapp
+       </div>
+     </div>
+   </footer>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/functions.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+</body>
 </html>
