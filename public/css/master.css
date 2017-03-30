@@ -35,7 +35,8 @@ textarea:focus {
 }
 
 /**** CHAT SCREEN ****/
-#chat-screen {
+#chat-screen,
+#login-screen {
   font-family: 'Roboto';
   min-height: 850px;
 }
